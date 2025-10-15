@@ -9186,6 +9186,13 @@ UniversalTab:AddButton({
     end
 })
 
+UniversalTab:AddButton({
+    Name = "Animation",
+    Callback = function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/Gazer-Ha/Reimagined/refs/heads/main/FE%20Animation%20editor'))()
+    end
+})
+
 -- Botão para ShiftLock
 UniversalTab:AddButton({
     Name = "ShiftLock",
