@@ -3,7 +3,6 @@ local Libary = loadstring(game:HttpGet("https://raw.githubusercontent.com/tbao14
 workspace.FallenPartsDestroyHeight = -math.huge
 
 local Window = Libary:MakeWindow({
-local Window = Libary:MakeWindow({
     Title = "RayHub | Brookhaven RP",
     SubTitle = "by: YanzGanteng",
     LoadText = "Rayv1 Hub",
