@@ -9180,9 +9180,9 @@ Section = UniversalTab:AddSection({
 
 -- Botão para Rael Hub Brook
 UniversalTab:AddButton({
-    Name = "Rael Hub Brook",
+    Name = "Mobil premium & trol gg",
     Callback = function()
-        loadstring(game:HttpGet("https://rawscripts.net/raw/The-Mimic-Rael-Hub-20921"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/slaoq0275-hash/Shnmaxhub/refs/heads/main/ShnmaxhubNewIcehub"))()
     end
 })
 
