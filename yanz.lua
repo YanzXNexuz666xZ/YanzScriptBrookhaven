@@ -3,23 +3,43 @@ local Libary = loadstring(game:HttpGet("https://raw.githubusercontent.com/tbao14
 workspace.FallenPartsDestroyHeight = -math.huge
 
 local Window = Libary:MakeWindow({
+local Window = Libary:MakeWindow({
     Title = "RayHub | Brookhaven RP",
     SubTitle = "by: YanzGanteng",
     LoadText = "Rayv1 Hub",
     Flags = "RayHub_Broookhaven"
 })
 
--- Tambah background setelah GUI muncul
+-- Tambah background (versi fleksibel)
 task.spawn(function()
-    repeat task.wait() until game:GetService("CoreGui"):FindFirstChild("RedzHub")
-
     local bg = Instance.new("ImageLabel")
-    bg.Parent = game:GetService("CoreGui"):FindFirstChild("RedzHub")
     bg.Size = UDim2.new(1, 0, 1, 0)
     bg.Position = UDim2.new(0, 0, 0, 0)
     bg.Image = "rbxassetid://99636054737127"
     bg.BackgroundTransparency = 1
     bg.ZIndex = 0
+
+    -- Coba cari parent yang cocok
+    local parentFound = false
+    while not parentFound do
+        -- 1️⃣ Coba cari di CoreGui
+        local core = game:GetService("CoreGui"):FindFirstChildOfClass("ScreenGui")
+        if core then
+            bg.Parent = core
+            parentFound = true
+            break
+        end
+
+        -- 2️⃣ Kalau gak ada, coba di PlayerGui
+        local playerGui = game.Players.LocalPlayer:FindFirstChildOfClass("PlayerGui")
+        if playerGui then
+            bg.Parent = playerGui
+            parentFound = true
+            break
+        end
+
+        task.wait(0.2)
+    end
 end)
 })
 Window:AddMinimizeButton({
