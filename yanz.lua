@@ -2,7 +2,6 @@
 local Libary = loadstring(game:HttpGet("https://raw.githubusercontent.com/tbao143/Library-ui/refs/heads/main/Redzhubui"))()
 workspace.FallenPartsDestroyHeight = -math.huge
 
--- Buat window dulu
 local Window = Libary:MakeWindow({
     Title = "RayHub | Brookhaven RP",
     SubTitle = "by: YanzGanteng",
@@ -10,15 +9,18 @@ local Window = Libary:MakeWindow({
     Flags = "RayHub_Broookhaven"
 })
 
--- Baru tambahin background setelah window selesai dibuat
-local bg = Instance.new("ImageLabel")
-bg.Parent = game:GetService("CoreGui"):FindFirstChild("RedzHub") 
-    or game:GetService("CoreGui"):FindFirstChildOfClass("ScreenGui")
-bg.Size = UDim2.new(1, 0, 1, 0)
-bg.Position = UDim2.new(0, 0, 0, 0)
-bg.Image = "rbxassetid://99636054737127"
-bg.BackgroundTransparency = 1
-bg.ZIndex = 0
+-- Tambah background setelah GUI muncul
+task.spawn(function()
+    repeat task.wait() until game:GetService("CoreGui"):FindFirstChild("RedzHub")
+
+    local bg = Instance.new("ImageLabel")
+    bg.Parent = game:GetService("CoreGui"):FindFirstChild("RedzHub")
+    bg.Size = UDim2.new(1, 0, 1, 0)
+    bg.Position = UDim2.new(0, 0, 0, 0)
+    bg.Image = "rbxassetid://99636054737127"
+    bg.BackgroundTransparency = 1
+    bg.ZIndex = 0
+end)
 })
 Window:AddMinimizeButton({
     Button = { Image = "rbxassetid://99636054737127", BackgroundTransparency = 0 },
