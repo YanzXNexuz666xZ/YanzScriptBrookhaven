@@ -9187,6 +9187,13 @@ UniversalTab:AddButton({
 })
 
 UniversalTab:AddButton({
+    Name = "Fe emote",
+    Callback = function()
+        loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Gi7331/scripts/main/Emote.lua"))()
+    end
+})
+
+UniversalTab:AddButton({
     Name = "Animation",
     Callback = function()
         loadstring(game:HttpGet('https://raw.githubusercontent.com/Gazer-Ha/Reimagined/refs/heads/main/FE%20Animation%20editor'))()
